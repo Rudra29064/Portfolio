@@ -1,0 +1,80 @@
+/* ─────────────────────────────────────────
+   BASE.CSS — Reset · Variables · Body
+───────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:      #0A0A0F;
+  --surface: #12121A;
+  --card:    #1A1A28;
+  --border:  #2A2A3E;
+  --accent:  #6C63FF;
+  --accent2: #A78BFA;
+  --text:    #C8C8D4;
+  --muted:   #6B6B80;
+  --white:   #F0F0F8;
+
+  --font-h: 'Space Grotesk', sans-serif;
+  --font-b: 'Inter', sans-serif;
+  --font-m: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-b);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ── SECTION SHARED ── */
+section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 8rem);
+}
+
+.section-label {
+  font-family: var(--font-m);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin-bottom: 3rem;
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

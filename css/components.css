@@ -1,0 +1,219 @@
+/* ─────────────────────────────────────────
+   COMPONENTS.CSS — Buttons · Cards · Tags · Projects · Skills
+───────────────────────────────────────── */
+
+/* ── BUTTONS ── */
+.btn {
+  font-family: var(--font-b);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #7d75ff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(108,99,255,0.35);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* ── STAT CARDS (About) ── */
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.stat-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.stat-number {
+  font-family: var(--font-h);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.stat-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* ── SKILL GROUPS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.skill-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.skill-group:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(108,99,255,0.12);
+}
+.skill-group-title {
+  font-family: var(--font-h);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.skill-tag {
+  font-family: var(--font-m);
+  font-size: 0.78rem;
+  color: var(--text);
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 4px;
+  padding: 0.3rem 0.65rem;
+  transition: all 0.2s;
+}
+.skill-tag:hover {
+  background: rgba(108,99,255,0.2);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+/* ── PROJECT CARDS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project-card:hover {
+  border-color: rgba(108,99,255,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(108,99,255,0.14);
+}
+.project-card:hover::before { opacity: 1; }
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.project-icon {
+  font-size: 1.5rem;
+  width: 44px; height: 44px;
+  background: rgba(108,99,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--font-m);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.project-link:hover { color: var(--accent); }
+
+.project-title {
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.7;
+  flex: 1;
+}
+.project-highlights {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.project-highlights li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-left: 1rem;
+  position: relative;
+}
+.project-highlights li::before {
+  content: '·';
+  position: absolute; left: 0;
+  color: var(--accent);
+}
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+.stack-tag {
+  font-family: var(--font-m);
+  font-size: 0.72rem;
+  color: var(--accent2);
+  background: rgba(167,139,250,0.08);
+  border: 1px solid rgba(167,139,250,0.2);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+}
+.section-line--centered {
+  margin: 0 auto 3rem;
+}
